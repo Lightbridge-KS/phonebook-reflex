@@ -9,11 +9,12 @@
 **/package.json
 *.db
 *.py[cod]
-.vscode
-.web
 .env
 .venv/
+.vscode
+.web
 __pycache__/
+assets/external/
 backend.zip
 bun.lockb
 dist/*
