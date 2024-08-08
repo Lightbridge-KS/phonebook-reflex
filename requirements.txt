@@ -1,2 +1,2 @@
-reflex==0.5.4
+reflex==0.5.9
 pandas==2.2.2
