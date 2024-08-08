@@ -6,7 +6,7 @@ import reflex as rx
 from rxconfig import config
 
 phonebook_raw = pandas.read_csv("data/TelephoneDepartment.csv")
-phonebook = phonebook_raw[["CodeName", "Description", "Telephone"]].fillna("")
+phonebook = phonebook_raw[["CodeName", "Telephone", "Description"]].fillna("")
 
 # Query Function
 
@@ -37,10 +37,14 @@ def index():
         rx.heading("PhoneBook for RadRAMA", padding="2em"),
         # rx.text(f"Query: {TextfieldQuery.text}"), 
         rx.input(
+            rx.input.slot(
+                rx.icon(tag="search"),
+            ),
             placeholder="Search here...",
             value=None,
             on_change=TextfieldQuery.set_text,
-            width="30%", size="3"
+            width="30%", size="3",
+            color_scheme = "violet"
         ),
         rx.box(
             rx.data_table(
